@@ -4,6 +4,7 @@ import Projects from "./routes/Projects.tsx";
 import { Header } from "./components/Header.tsx";
 import ProjectDetail from "./components/ProjectDetail.tsx";
 
+const base = import.meta.env.BASE_URL
 function App() {
   return (
     <BrowserRouter>
@@ -11,9 +12,9 @@ function App() {
         <Header />
 
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path={base + "/"} element={<Home />} />
+            <Route path={base+ "/projects"} element={<Projects />} />
+            <Route path={base + "/project/:id"} element={<ProjectDetail />} />
           </Routes>
       </div>
     </BrowserRouter>

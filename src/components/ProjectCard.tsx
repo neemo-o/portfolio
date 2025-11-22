@@ -18,10 +18,11 @@ interface ProjectCardProps {
   project: Project;
 }
 
+const base = import.meta.env.BASE_URL
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Link
-      to={`/project/${project.id}`}
+      to={ base + `/project/${project.id}`}
       className="group cursor-pointer relative w-full bg-[#0a0a0a] border border-white/10 rounded-lg p-6 hover:border-white/30 transition-all duration-300 flex flex-col justify-between min-h-[200px]"
     >
       <div>

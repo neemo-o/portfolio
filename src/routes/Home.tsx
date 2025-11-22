@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
               href="mailto:neemiasvascon.dev@gmail.com"
               className="hover:text-white transition-colors"
             >
-              neemiasvascon.dev@gmail.com
+              Entre em contato: neemiasvascon.dev@gmail.com
             </a>
           </div>
         </div>
