@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import bk from "../assets/background.jpg";
+import Roles from "../components/Roles";
 
 export const Home: React.FC = () => {
-  const [time, setTime] = useState<string>("9:14");
+  const [time, setTime] = useState<string>("");
   const [mounted, setMounted] = useState(false);
+  const [test, setTest] = useState(0);
 
   useEffect(() => {
     setMounted(true);
+    const updateTest = () => {
+      setTest((Math.floor(Date.now() / 1000)))
+    }
+    setInterval(updateTest, 1000);
     const updateTime = () => {
       const now = new Date();
       setTime(now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }));
@@ -23,7 +29,7 @@ export const Home: React.FC = () => {
           <img
             src={bk}
             alt="Background"
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-linear-to-b from-[#050505]/40 via-[#050505]/20 to-[#050505]" />
         </div>
@@ -37,24 +43,18 @@ export const Home: React.FC = () => {
                 <span>|</span>
                 <span>{time}</span>
                 </div>
-                <span className="">{Math.floor(Date.now() / 1000)}</span>
+                <span className="">{test}</span>
             </div>
             
             <h1 className="text-6xl md:text-7xl lg:text-7xl font-semibold text-white tracking-tight mb-1 drop-shadow-2xl">
                 Neemias<br />Vasconcelos
             </h1>
 
-            <div className="mt-8 px-6 py-2 rounded-full border border-white/30 bg-white/5 backdrop-blur-md flex items-center gap-3">
-                <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="text-sm font-mono text-neutral-300 italic">Desenvolvedor Full-Stack</span>
-            </div>
+            <Roles />
 
             <div className="mt-14 max-w-md text-neutral-300 font-mono text-xs md:text-sm leading-relaxed px-6">
-                <p>Olá</p>
-                <p className="mt-4">Sou um desenvolvedor full-stack</p>
+                <p>Bem-vindo!</p>
+                <p className="mt-4">Construo sistemas completos com foco em performance e clareza.</p>
             </div>
 
             
@@ -63,9 +63,9 @@ export const Home: React.FC = () => {
                 <div className="flex gap-4 ">
                     <a href="https://github.com/neemo-o" className="hover:text-white" target="_blank">GitHub</a>
                     <span>-</span>
-                    <a href="https://github.com/neemo-o" className="hover:text-white" target="_blank">Instagram</a>
+                    <a href="https://www.instagram.com/neemias.melo/" className="hover:text-white" target="_blank">Instagram</a>
                     <span>-</span>
-                    <a href="https://github.com/neemo-o" className="hover:text-white" target="_blank">Linkedin</a>
+                    <a href="https://www.linkedin.com/in/neeemias/" className="hover:text-white" target="_blank">Linkedin</a>
                 </div>
                 <a href="mailto:neemiasvascon.dev@gmail.com" className="hover:text-white transition-colors">neemiasvascon.dev@gmail.com</a>
             </div>

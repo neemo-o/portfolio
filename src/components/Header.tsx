@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
 
          <Link to="/projects" className={`${loc.pathname === "/projects" ? 'text-white font-bold' : 'text-neutral-400'} hover:text-white transition-colors`}
         >
-          Projects
+          Projetos
         </Link>
 
       </nav>
